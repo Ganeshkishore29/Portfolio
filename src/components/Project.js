@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 import fluxoImg from "../assets/fluxo.png";
-import mlImg from "../assets/signature.png";
+import mlImg from "../assets/mlImg.png";
 
 const projects = [
   {
@@ -21,7 +21,7 @@ const projects = [
     ],
     image: fluxoImg,
     demo: "https://fluxo-lilac.vercel.app/",
-    code: "#",
+    code: "https://github.com/Ganeshkishore29/Fluxo",
   },
   {
     title: "Smart Waste Segregation System",
@@ -35,7 +35,7 @@ const projects = [
     ],
     image: mlImg,
     demo: "#",
-    code: "#",
+    code: "https://github.com/Ganeshkishore29/smart-waste-segregation",
   },
 ];
 
@@ -115,25 +115,33 @@ const Project = () => {
               </div>
 
               {/* Buttons */}
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <a
-                  href={p.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-2.5 bg-white text-black rounded-lg font-medium text-center"
-                >
-                  Live Demo
-                </a>
+              {(p.demo !== "#" || p.code !== "#") && (
+  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
 
-                <a
-                  href={p.code}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-2.5 border border-white/20 rounded-lg text-center"
-                >
-                  GitHub
-                </a>
-              </div>
+    {p.demo !== "#" && (
+      <a
+        href={p.demo}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="px-4 py-2.5 bg-white text-black rounded-lg font-medium text-center"
+      >
+        Live Demo
+      </a>
+    )}
+
+    {p.code !== "#" && (
+      <a
+        href={p.code}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="px-4 py-2.5 border border-white/20 rounded-lg text-center"
+      >
+        GitHub
+      </a>
+    )}
+
+  </div>
+)}
             </motion.div>
           ))}
 
