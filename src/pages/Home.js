@@ -3,10 +3,14 @@ import Experience from "../components/Experience"
 import Hero from "../components/Hero"
 import Skills from "../components/Skills"
 import Footer from "../components/Footer"
+import Project from "../components/Project"
 
 function Home() {
   return<><Hero />
-  <About/><Skills/>
+  <About/>
+  <Project/>
+  <Skills/>
+  
   <Experience/>
   <Footer/>
   </>

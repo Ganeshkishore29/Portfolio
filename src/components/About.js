@@ -11,7 +11,7 @@ const About = () => {
         setTimeout(() => setDownloaded(false), 2500);
       };
   return (
-    <section className="relative w-full bg-white text-black overflow-hidden px-6 md:px-20 py-16 md:py-20">
+    <section className="relative w-full bg-white text-black overflow-hidden px-0 md:px-20 py-16 md:py-20">
 
   <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.8),transparent_60%)]" />
 
@@ -25,7 +25,7 @@ const About = () => {
     ABOUT
   </motion.h1>
 
-  <div className="absolute left-4 md:left-10 top-1/2 -translate-y-1/2 -rotate-90 text-gray-500 tracking-[0.6em] text-xs md:text-sm">
+  <div className="absolute left-0 -translate-y-1/2 -rotate-90 md:left-10 md:top-1/2 md:-translate-y-1/2 md:-rotate-90 text-gray-500 tracking-[0.6em] text-xs md:text-sm">
     PROFILE —
   </div>
 
@@ -46,7 +46,7 @@ const About = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, delay: 0.1 }}
       viewport={{ once: true }}
-      className="text-base md:text-lg text-gray-700 leading-relaxed mb-6"
+      className="text-base md:text-lg text-gray-700 leading-relaxed mb-5 px-6 md:px-0"
     >
       I am a Software Developer focused on building reliable, scalable,
       and user-centric applications. Through intensive hands-on projects,
@@ -59,7 +59,7 @@ const About = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, delay: 0.2 }}
       viewport={{ once: true }}
-      className="text-base md:text-lg text-gray-700 leading-relaxed mb-6"
+      className="text-base md:text-lg text-gray-700 leading-relaxed mb-5 px-6 md:px-0"
     >
       My primary interests include system design, clean architecture,
       and building real-world applications such as AI-driven e-commerce
@@ -71,7 +71,7 @@ const About = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, delay: 0.3 }}
       viewport={{ once: true }}
-      className="text-base md:text-lg text-gray-700 leading-relaxed mb-8"
+      className="text-base md:text-lg text-gray-700 leading-relaxed mb-8 px-6 md:px-0"
     >
       I am actively seeking an entry-level Software Development role
       where I can contribute to meaningful products and grow as a developer.
