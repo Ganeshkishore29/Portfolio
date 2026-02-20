@@ -1,17 +1,32 @@
-import React from 'react'
+import React from "react";
 
 function Navbar() {
   return (
-    <nav className="flex justify-between items-center px-8 py-4 text-white">
-      <div className="space-x-6">
-        <a href="#projects" className="hover:text-blue-400">Projects</a>
-        <a href="#skills" className="hover:text-blue-400">Skills</a>
-        <a href="#contact" className="hover:text-blue-400">Contact</a>
+    <nav className="
+      w-full
+      flex justify-between items-center
+      px-6 md:px-8 py-4
+      text-white
+      z-50
+    ">
+
+     
+      {/* Links */}
+      <div className="flex space-x-4 md:space-x-6 text-sm md:text-base">
+        <a href="#projects" className="hover:text-blue-400 transition">
+          Projects
+        </a>
+
+        <a href="#skills" className="hover:text-blue-400 transition">
+          Skills
+        </a>
+
+        <a href="#contact" className="hover:text-blue-400 transition">
+          Contact
+        </a>
       </div>
     </nav>
-  )
+  );
 }
 
-export default Navbar
-
-
+export default Navbar;

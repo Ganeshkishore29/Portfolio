@@ -1,94 +1,101 @@
 import React from "react";
 import { motion } from "framer-motion";
+import {
+  FaPython,
+  FaJs,
+  FaReact,
+  FaHtml5,
+  FaCss3Alt,
+  FaGitAlt,
+  FaDatabase,
 
-const capabilities = [
-  {
-    title: "Full-Stack Web Applications",
-    desc: "Design and build scalable applications using React, Django REST Framework, and clean architecture.",
-  },
-  {
-    title: "AI-Powered Features",
-    desc: "Integrate CLIP, FAISS, and LLM models into real products for search, recommendations, and automation.",
-  },
-  {
-    title: "Secure Backend Systems",
-    desc: "Implement authentication, REST APIs, database design, and payment integrations for production use.",
-  },
-  {
-    title: "Performance & Scalability",
-    desc: "Optimize queries, structure maintainable codebases, and design systems for real-world usage.",
-  },
+} from "react-icons/fa";
+import { SiDjango, SiTailwindcss, SiPostgresql, SiMysql,SiPostman } from "react-icons/si";
+
+const skills = [
+  { name: "Python", icon: <FaPython /> },
+  { name: "JavaScript", icon: <FaJs /> },
+  { name: "React", icon: <FaReact /> },
+  { name: "Django", icon: <SiDjango /> },
+  { name: "HTML5", icon: <FaHtml5 /> },
+  { name: "CSS3", icon: <FaCss3Alt /> },
+  { name: "Tailwind", icon: <SiTailwindcss /> },
+  { name: "PostgreSQL", icon: <SiPostgresql /> },
+  { name: "MySQL", icon: <SiMysql /> },
+  { name: "Git", icon: <FaGitAlt /> },
+  { name: "REST APIs", icon: <FaDatabase /> },
+    { name: "Postman", icon: <SiPostman /> },
 ];
 
 const Skills = () => {
   return (
-    <section className="relative w-full bg-black text-white py-36 px-6 md:px-20">
+    <section 
+  id="skills"
+  className="relative w-full bg-black text-white py-20 md:py-24 px-6 md:px-20 overflow-hidden"
+>
 
-      <div className="max-w-5xl mx-auto">
+  {/* Ambient Glow */}
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_60%)]" />
 
-        {/* Title */}
-        <motion.h2
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
+  <div className="relative max-w-6xl mx-auto text-center z-10">
+
+    {/* Title */}
+    <motion.h2
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+      className="text-3xl md:text-5xl font-bold mb-14 tracking-tight"
+    >
+      Skills & Technologies
+    </motion.h2>
+
+    {/* Grid */}
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
+
+      {skills.map((skill, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 60, scale: 0.95 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.5, delay: index * 0.04 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-6xl font-bold mb-24 text-center"
+          whileHover={{ y: -3, scale: 1.05 }}
+          className="
+            relative group
+            rounded-2xl
+            p-5 md:p-6
+            flex flex-col items-center justify-center
+            bg-white/5 backdrop-blur-xl
+            border border-white/10
+            shadow-[0_12px_40px_rgba(0,0,0,0.6)]
+            transition overflow-hidden
+          "
         >
-          What I Build
-        </motion.h2>
 
-        {/* Timeline */}
-        <div className="relative">
+          {/* Hover glow */}
+          <div className="
+            absolute inset-0 opacity-0 group-hover:opacity-100
+            transition
+            bg-[radial-gradient(circle,rgba(255,255,255,0),transparent_70%)]
+          " />
 
-          {/* Vertical line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-white/20" />
+          {/* Icon */}
+          <div className="relative text-3xl md:text-4xl mb-3 text-white group-hover:scale-110 transition">
+            {skill.icon}
+          </div>
 
-          {capabilities.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 80 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className={`
-                relative mb-20
-                md:flex md:items-start
-                ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}
-              `}
-            >
+          {/* Name */}
+          <p className="relative text-gray-200 text-sm md:text-base font-medium tracking-wide">
+            {skill.name}
+          </p>
 
-              {/* Dot */}
-              <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-white shadow-lg" />
+        </motion.div>
+      ))}
 
-              {/* Content */}
-              <div className="
-                ml-12 md:ml-0 md:w-1/2
-                px-4
-              ">
-                <div className="
-                  bg-white/5 backdrop-blur-md
-                  border border-white/10
-                  rounded-2xl
-                  p-6
-                  shadow-lg
-                ">
-                  <h3 className="text-2xl font-semibold mb-3">
-                    {item.title}
-                  </h3>
-
-                  <p className="text-gray-300 leading-relaxed">
-                    {item.desc}
-                  </p>
-                </div>
-              </div>
-
-            </motion.div>
-          ))}
-
-        </div>
-
-      </div>
-    </section>
+    </div>
+  </div>
+</section>
   );
 };
 
